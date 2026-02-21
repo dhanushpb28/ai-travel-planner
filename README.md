@@ -3,13 +3,13 @@
 
 AI-Powered Travel Planner is an intelligent web application that generates personalized travel itineraries based on user inputs such as destination, duration, budget, and interests.
 
-The application uses AI to create structured daily plans and can be extended with real-time API integrations (e.g., weather, travel data).
+The application integrates Google Gemini (via the official Google GenAI SDK) to dynamically generate structured, day-by-day travel plans. The system is designed to be modular and extensible, allowing integration of real-time APIs such as weather services and travel data providers.
 
 ## Features
 
 - User input for destination, duration, budget, and interests
 
-- AI-generated structured itinerary
+- AI-generated structured itinerary using Google Gemini
 
 - Budget-aware recommendations
 
@@ -17,15 +17,30 @@ The application uses AI to create structured daily plans and can be extended wit
 
 - Streamlit-based interactive UI
 
+
 ## Tech Stack
 
-- Python
+- Python 3.9+
 
 - Streamlit
 
-- Large Language Model (LLM) for itinerary generation
+- Google GenAI SDK (google-genai)
 
-- Optional API integrations (Weather, Travel APIs)
+- Gemini 3 Flash Preview Model
+
+- Python Dotenv (for environment variable management)
+
+## API Key Setup (Required)
+
+This project uses Google Gemini API.
+
+    1.Go to: https://aistudio.google.com/
+    2.Create an API key.
+    3.Create a .env file in the project root:
+        ```sh
+        GEMINI_API_KEY=your_actual_api_key_here
+        ```
+⚠️ Do not commit your .env file to GitHub.
 
 ## Try It Yourself
 1. Clone the Repository:
