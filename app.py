@@ -26,10 +26,16 @@ with st.form("travel_form"):
         start_date = st.date_input("📅 Start Date", min_value=date.today())
         end_date = st.date_input("📅 End Date", min_value=date.today())
 
+    people = st.number_input(
+        "👥 Number of Travelers",
+        min_value=1,
+        value=1
+    )
+
     budget = st.number_input(
-        "💰 Budget (USD)",
-        min_value=100,
-        value=1000
+        "💰 Total Budget (INR)",
+        min_value=1000,
+        value=50000
     )
 
     interests = st.multiselect(
@@ -58,6 +64,7 @@ if submitted:
                 start_date,
                 end_date,
                 total_days,
+                people,
                 budget,
                 interests
             )
