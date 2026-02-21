@@ -4,25 +4,28 @@ from google import genai
 
 load_dotenv()
 
-client = genai.Client()  # picks up GEMINI_API_KEY automatically
+client = genai.Client()
 
-
-def generate_itinerary(destination, days, budget, interests):
+def generate_itinerary(from_city, to_city, start_date, end_date, days, budget, interests):
 
     interests_text = ", ".join(interests) if interests else "general tourism"
 
     prompt = f"""
-    Create a detailed {days}-day travel itinerary for {destination}.
-    Budget: ${budget}.
-    Interests: {interests_text}.
+    Create a detailed travel itinerary:
 
-    For each day include:
-    - Morning activity
-    - Afternoon activity
-    - Evening activity
-    - Accommodation suggestion
-    - Local food or beverage to try
-    - Estimated daily cost breakdown
+    Departure City: {from_city}
+    Destination: {to_city}
+    Travel Dates: {start_date} to {end_date}
+    Duration: {days} days
+    Budget: ${budget}
+    Interests: {interests_text}
+
+    Include:
+    - Suggested travel option (flight/train)
+    - Accommodation recommendation
+    - Day-by-day plan (morning, afternoon, evening)
+    - Local food or beverages to try
+    - Estimated daily budget breakdown
 
     Format clearly day by day.
     """

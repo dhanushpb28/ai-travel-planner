@@ -1,4 +1,5 @@
 import streamlit as st
+from datetime import date
 from ai_engine import generate_itinerary
 
 # ---------- Page Config ----------
@@ -8,7 +9,6 @@ st.set_page_config(
     layout="centered"
 )
 
-# ---------- Header ----------
 st.title("🌍 AI-Powered Travel Planner")
 st.markdown("Plan your trip intelligently based on your preferences.")
 st.markdown("---")
@@ -16,14 +16,15 @@ st.markdown("---")
 # ---------- Input Form ----------
 with st.form("travel_form"):
 
-    destination = st.text_input("📍 Destination")
+    col1, col2 = st.columns(2)
 
-    days = st.number_input(
-        "🗓 Number of Days",
-        min_value=1,
-        max_value=30,
-        value=3
-    )
+    with col1:
+        from_city = st.text_input("🛫 From (Departure City)")
+        to_city = st.text_input("🛬 To (Destination City)")
+
+    with col2:
+        start_date = st.date_input("📅 Start Date", min_value=date.today())
+        end_date = st.date_input("📅 End Date", min_value=date.today())
 
     budget = st.number_input(
         "💰 Budget (USD)",
@@ -38,20 +39,31 @@ with st.form("travel_form"):
 
     submitted = st.form_submit_button("✨ Generate Itinerary")
 
-# ---------- Output Section ----------
+# ---------- Output ----------
 if submitted:
 
-    if not destination:
-        st.error("Please enter a destination.")
+    if not from_city or not to_city:
+        st.error("Please enter both departure and destination cities.")
+    elif end_date <= start_date:
+        st.error("End date must be after start date.")
     else:
         try:
+            total_days = (end_date - start_date).days
+
             st.info("Generating AI-powered itinerary... Please wait ⏳")
 
-            itinerary = generate_itinerary(destination, days, budget, interests)
+            itinerary = generate_itinerary(
+                from_city,
+                to_city,
+                start_date,
+                end_date,
+                total_days,
+                budget,
+                interests
+            )
 
             st.markdown("---")
             st.subheader("📝 Your AI-Generated Itinerary")
-
             st.write(itinerary)
 
         except Exception as e:

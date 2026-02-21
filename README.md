@@ -30,6 +30,8 @@ The application integrates Google Gemini (via the official Google GenAI SDK) to 
 
 - Python Dotenv (for environment variable management)
 
+
+
 ## API Key Setup (Required)
 
 This project uses Google Gemini API.
@@ -43,6 +45,7 @@ This project uses Google Gemini API.
     ```
 
 ⚠️ Do not commit your `.env` file to GitHub.
+
 
 ## Try It Yourself
 1. Clone the Repository:
