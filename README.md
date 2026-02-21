@@ -34,9 +34,9 @@ The application integrates Google Gemini (via the official Google GenAI SDK) to 
 
 This project uses Google Gemini API.
 
-    1.Go to: https://aistudio.google.com/
-    2.Create an API key.
-    3.Create a .env file in the project root:
+1. Go to: https://aistudio.google.com/
+2. Create an API key.
+3. Create a .env file in the project root:
         ```sh
         GEMINI_API_KEY=your_actual_api_key_here
         ```
