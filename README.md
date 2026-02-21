@@ -37,9 +37,11 @@ This project uses Google Gemini API.
 1. Go to: https://aistudio.google.com/
 2. Create an API key.
 3. Create a `.env` file in the project root:
-        ```bash
-        GEMINI_API_KEY=your_actual_api_key_here
-        ```
+
+```bash
+GEMINI_API_KEY=your_actual_api_key_here
+```
+
 ⚠️ Do not commit your `.env` file to GitHub.
 
 ## Try It Yourself
