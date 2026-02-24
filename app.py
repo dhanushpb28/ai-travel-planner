@@ -55,7 +55,16 @@ if user_input:
 
         with st.spinner(random.choice(loading_messages)):
             response = generate_chat_response(st.session_state.messages)
-            st.markdown(response)
+
+        import time
+
+        placeholder = st.empty()
+        full_response = ""
+
+        for char in response:
+            full_response += char
+            placeholder.markdown(full_response)
+            time.sleep(0.005)
 
     # Save assistant response
     st.session_state.messages.append(
