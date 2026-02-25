@@ -7,6 +7,9 @@ The system collects trip details progressively (departure city, destination, tra
 
 The assistant is powered by Google Gemini (Gemini 3 Flash Preview) via the official Google GenAI SDK and features a modern Streamlit-based chat interface with session management and streaming responses.
 
+<br>
+
+
 ## Features
 
 - Conversational AI travel assistant powered by Google Gemini
@@ -19,6 +22,8 @@ The assistant is powered by Google Gemini (Gemini 3 Flash Preview) via the offic
 - Estimated budget breakdown
 - Multi-session chat management (ChatGPT-style sidebar)
 - Streaming typing effect for realistic AI responses
+
+<br>
 
 
 ## Tech Stack
@@ -33,6 +38,7 @@ The assistant is powered by Google Gemini (Gemini 3 Flash Preview) via the offic
 
 - Python Dotenv (for environment variable management)
 
+<br>
 
 
 ## API Key Setup (Required)
@@ -48,6 +54,8 @@ This project uses Google Gemini API.
     ```
 
 ⚠️ Do not commit your `.env` file to GitHub.
+
+<br>
 
 
 ## Try It Yourself
@@ -123,6 +131,7 @@ The system follows a conversational AI architecture:
 
     - Once complete information is gathered, it produces a structured itinerary
 
+<br>
 
 
 ## Future Improvements
