@@ -84,6 +84,8 @@ This project uses Google Gemini API.
     ```
 The application will open automatically in your browser.
 
+<br>
+
 ## How It Works
 
 The system follows a conversational AI architecture:
@@ -108,7 +110,6 @@ The system follows a conversational AI architecture:
 
 - Support post-generation modifications (e.g., cheaper version, luxury upgrade)
 
----
 
 ### AI Reasoning
 
