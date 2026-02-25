@@ -108,6 +108,8 @@ The system follows a conversational AI architecture:
 
 - Support post-generation modifications (e.g., cheaper version, luxury upgrade)
 
+---
+
 ### AI Reasoning
 
 - Gemini receives:
